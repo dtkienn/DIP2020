@@ -1,5 +1,4 @@
-# DIP2020
-Digital Image Processing - USTH 2020
+# Digital Image Processing - USTH 2020
 Research about segmentation's application
 
 - Question
@@ -21,3 +20,4 @@ Research about segmentation's application
     + Nguyen The Trung - BI9-224
     + Luu Quy Nhan - BI9-178
     + Doan Trung Kien - BI9-130
+    + Tran Minh Nhat - BI9-179
