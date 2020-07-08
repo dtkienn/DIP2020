@@ -18,7 +18,7 @@ def draw_prediction(img, class_id, confidence, x, y, x_plus_w, y_plus_h):
 
     label = str(classes[class_id])
 
-    color = COLORS[class_id]
+    color = color[class_id]
 
     cv2.rectangle(img, (x,y), (x_plus_w,y_plus_h), color, 2)
 
@@ -33,17 +33,18 @@ classes = None
 with open("classes.data", 'r') as f:
     classes = [line.strip() for line in f.readlines()]
 
-COLORS = np.random.uniform(0, 255, size=(len(classes), 3))
+color = np.random.uniform(0, 255, size=(len(classes), 3))
 
+# Loading pre-trained weights file and config for CNN
 net = cv2.dnn.readNet("yolov3.weights", 'yolov3.cfg')
 
+# Detecting objects
 blob = cv2.dnn.blobFromImage(image, scale, (416,416), (0,0,0), True, crop=False)
 
 net.setInput(blob)
-
 outs = net.forward(get_output_layers(net))
 
-
+# Creating and label boxes
 class_ids = []
 confidences = []
 boxes = []
@@ -78,6 +79,7 @@ for i in indices:
     h = box[3]
     draw_prediction(image, class_ids[i], confidences[i], round(x), round(y), round(x+w), round(y+h))
 
+# Show result
 cv2.imwrite("detection.jpg", image)
 cv2.imshow("object detection", image)
 cv2.waitKey()

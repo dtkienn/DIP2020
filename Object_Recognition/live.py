@@ -14,7 +14,7 @@ outputlayers = [layer_names[i[0] - 1] for i in net.getUnconnectedOutLayers()]
 
 colors= np.random.uniform(0,255,size=(len(classes),3))
 
-#loading image
+# Loading stream
 cap=cv2.VideoCapture(0)
 font = cv2.FONT_HERSHEY_PLAIN
 starting_time= time.time()
@@ -25,13 +25,13 @@ while True:
     frame_id+=1
     
     height,width,channels = frame.shape
-    #detecting objects
+    # Detect objects
     blob = cv2.dnn.blobFromImage(frame,0.00392,(320,320),(0,0,0),True,crop=False)
 
         
     net.setInput(blob)
     outs = net.forward(outputlayers)
- 
+    # Add and label boxes
     class_ids=[]
     confidences=[]
     boxes=[]
@@ -70,11 +70,12 @@ while True:
     fps=frame_id/elapsed_time
     cv2.putText(frame,"FPS:"+str(round(fps,2)),(10,50),font,2,(0,0,0),1)
     
+    #Show result
     cv2.imshow("Image",frame)
     key = cv2.waitKey(1)
     
     if key == 27: #Press ESC to stop
-        break;
+        break
     
 cap.release()    
 cv2.destroyAllWindows()
