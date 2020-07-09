@@ -15,6 +15,14 @@ Research about segmentation's application
 - We only focus on "Object detection" and "Face recognition"
 
 - Installation & Tutorials <update soon>
+    1. Run in command line
+        ```
+        pip install -r requirements
+        ```
+    2. Run 
+        ```
+        python main.py
+        ```
 
 - Our members:
     + Le Trong Hoang - BI9-241
