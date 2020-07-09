@@ -15,13 +15,14 @@ Research about segmentation's application
 - We only focus on "Object detection" and "Face recognition"
 
 - Installation & Tutorials <update soon>
+
     I. Run in command line
         ```
         pip install -r requirements
         ```
 
     II. Download yolov3.weights at ```link```
-    
+
     III. Run 
         ```
         python main.py
