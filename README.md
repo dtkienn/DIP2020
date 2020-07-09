@@ -19,7 +19,9 @@ Research about segmentation's application
         ```
         pip install -r requirements
         ```
+
     II. Download yolov3.weights at ```link```
+    
     III. Run 
         ```
         python main.py
