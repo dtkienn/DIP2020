@@ -16,7 +16,7 @@ Research about segmentation's application
 
 - Installation & Tutorials <update soon>
 
-    I. Run in command line
+    I. Run in terminal
         ```
         pip install -r requirements
         ```
