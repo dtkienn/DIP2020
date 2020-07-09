@@ -33,6 +33,8 @@ Research about segmentation's application
         ```
         python main.py
         ```
+    
+    Press "Q" to quit
 
 - Our members:
     + Le Trong Hoang - BI9-241
